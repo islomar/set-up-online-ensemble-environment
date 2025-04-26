@@ -1,0 +1,23 @@
+# AWS region to deploy resources
+aws_region = "us-west-2"
+
+# Environment name
+environment = "dev"
+
+# AppStream fleet configuration
+appstream_fleet_name = "my-appstream-fleet"
+instance_type = "stream.standard.medium"
+fleet_type = "ON_DEMAND"
+appstream_image_name = "AppStream-WinServer2019-07-11-2023"
+
+# AppStream stack configuration
+appstream_stack_name = "my-appstream-stack"
+
+# Session settings
+max_user_duration_in_seconds = 57600  # 16 hours
+disconnect_timeout_in_seconds = 900    # 15 minutes
+idle_disconnect_timeout_in_seconds = 900  # 15 minutes
+
+# Optional: Provide existing VPC and subnet IDs
+# vpc_id = "vpc-12345678"
+# subnet_ids = ["subnet-12345678", "subnet-87654321"]
