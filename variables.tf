@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources"
   type        = string
-  default     = "us-west-2"
+  default     = "eu-south-2"
 }
 
 variable "environment" {
@@ -25,13 +25,13 @@ variable "appstream_stack_name" {
 variable "appstream_image_name" {
   description = "Name of the AppStream image to use"
   type        = string
-  default     = "AppStream-WinServer2019-07-11-2023"
+  default     = "AppStream-WinServer2022-02-11-2025"
 }
 
 variable "instance_type" {
   description = "The instance type for the AppStream fleet"
   type        = string
-  default     = "stream.standard.medium"
+  default     = "stream.standard.2xlarge"
 }
 
 variable "fleet_type" {

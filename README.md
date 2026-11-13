@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents** *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [AWS AppStream 2.0 Terraform Module](#aws-appstream-20-terraform-module)
+  - [Architecture](#architecture)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+  - [Input Variables](#input-variables)
+  - [Outputs](#outputs)
+  - [Customization](#customization)
+    - [Active Directory Integration](#active-directory-integration)
+    - [Custom Images](#custom-images)
+  - [Notes](#notes)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # AWS AppStream 2.0 Terraform Module
 
 This Terraform module deploys AWS AppStream 2.0 resources to provide application streaming capabilities. It creates an AppStream fleet, stack, and the necessary networking infrastructure.
@@ -24,7 +42,7 @@ This module sets up the following AWS resources:
 module "appstream" {
   source = "./terraform/aws-appstream"
 
-  aws_region          = "us-west-2"
+  aws_region          = "eu-south-2"
   environment         = "dev"
   appstream_fleet_name = "my-appstream-fleet"
   appstream_stack_name = "my-appstream-stack"
@@ -41,12 +59,12 @@ module "appstream" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
-| aws_region | The AWS region to deploy resources | string | "us-west-2" | no |
+| aws_region | The AWS region to deploy resources | string | "eu-south-2" | no |
 | environment | Environment name (e.g., dev, staging, prod) | string | "dev" | no |
 | appstream_fleet_name | Name of the AppStream fleet | string | "appstream-fleet" | no |
 | appstream_stack_name | Name of the AppStream stack | string | "appstream-stack" | no |
-| appstream_image_name | Name of the AppStream image to use | string | "AppStream-WinServer2019-07-11-2023" | no |
-| instance_type | The instance type for the AppStream fleet | string | "stream.standard.medium" | no |
+| appstream_image_name | Name of the AppStream image to use | string | "AppStream-WinServer2022-02-11-2025" | no |
+| instance_type | The instance type for the AppStream fleet | string | "stream.standard.2xlarge" | no |
 | fleet_type | The fleet type (ALWAYS_ON or ON_DEMAND) | string | "ON_DEMAND" | no |
 | max_user_duration_in_seconds | The maximum time that a streaming session can remain active | number | 57600 (16 hours) | no |
 | disconnect_timeout_in_seconds | The amount of time that a streaming session remains active after users disconnect | number | 900 (15 minutes) | no |

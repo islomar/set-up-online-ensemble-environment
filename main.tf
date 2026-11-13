@@ -73,17 +73,6 @@ resource "aws_security_group" "appstream_sg" {
   }
 }
 
-# AppStream Directory Config (optional)
-# Uncomment if you need to integrate with Active Directory
-# resource "aws_appstream_directory_config" "appstream_directory" {
-#   directory_name                          = "corp.example.com"
-#   organizational_unit_distinguished_names = ["OU=AppStream,DC=corp,DC=example,DC=com"]
-#   service_account_credentials {
-#     account_name     = "service_account_name"
-#     account_password = "service_account_password"
-#   }
-# }
-
 # AppStream Fleet
 resource "aws_appstream_fleet" "appstream_fleet" {
   name                            = var.appstream_fleet_name
@@ -103,12 +92,7 @@ resource "aws_appstream_fleet" "appstream_fleet" {
     security_group_ids = [aws_security_group.appstream_sg.id]
   }
   
-  # Uncomment if you need to integrate with Active Directory
-  # domain_join_info {
-  #   directory_name = "corp.example.com"
-  #   organizational_unit_distinguished_name = "OU=AppStream,DC=corp,DC=example,DC=com"
-  # }
-  
+
   depends_on = [
     aws_subnet.appstream_subnet,
     aws_security_group.appstream_sg

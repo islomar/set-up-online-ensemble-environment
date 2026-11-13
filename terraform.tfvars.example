@@ -1,14 +1,14 @@
 # AWS region to deploy resources
-aws_region = "us-west-2"
+aws_region = "eu-south-2"
 
 # Environment name
 environment = "dev"
 
 # AppStream fleet configuration
 appstream_fleet_name = "my-appstream-fleet"
-instance_type = "stream.standard.medium"
+instance_type = "stream.standard.2xlarge"
 fleet_type = "ON_DEMAND"
-appstream_image_name = "AppStream-WinServer2019-07-11-2023"
+appstream_image_name = "AppStream-WinServer2022-02-11-2025"
 
 # AppStream stack configuration
 appstream_stack_name = "my-appstream-stack"
